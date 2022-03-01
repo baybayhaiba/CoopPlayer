@@ -1,7 +1,7 @@
 import 'package:coop_player/home.dart';
 import 'package:coop_player/main.dart';
 import 'package:coop_player/model/user.dart';
-import 'package:coop_player/provider/UserManager.dart';
+import 'package:coop_player/provider/user_manager.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';

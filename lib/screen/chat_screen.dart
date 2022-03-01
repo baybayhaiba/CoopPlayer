@@ -1,8 +1,10 @@
+import 'package:coop_player/extension/context.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../component/button_corner.dart';
-import '../provider/UserManager.dart';
+import '../provider/user_manager.dart';
+import 'login_screen.dart';
 
 class ChatScreen extends StatelessWidget {
   const ChatScreen({Key? key}) : super(key: key);
@@ -17,7 +19,13 @@ class ChatScreen extends StatelessWidget {
       }
 
       return Center(
-        child: ButtonCorner(),
+        child: ButtonCorner(
+          onPressed: () async {
+            final manager = Provider.of<UserManager>(context, listen: false);
+            final result = await context.push(LoginScreen());
+            manager.provideLogin(result);
+          },
+        ),
       );
     });
   }

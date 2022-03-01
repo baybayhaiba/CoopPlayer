@@ -3,14 +3,17 @@ import 'package:google_fonts/google_fonts.dart';
 
 extension BuildContexX on BuildContext {
   Future push(Widget widget) {
-    return Navigator.push(this, MaterialPageRoute(
-      builder: (context) {
-        return widget;
-      },
-    ));
+    return Navigator.push(
+      this,
+      MaterialPageRoute(
+        builder: (context) {
+          return widget;
+        },
+      ),
+    );
   }
 
-  Size screenSize(){
+  Size screenSize() {
     return MediaQuery.of(this).size;
   }
 
